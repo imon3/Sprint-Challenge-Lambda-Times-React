@@ -1,18 +1,20 @@
 import React from 'react';
 import Tab from './Tab';
+import Proptypes from 'prop-types';
+
 const Tabs = props => {
-  console.log(props)
+  // console.log(props.tabs)
   return (
     <div className="tabs">
       <div className="topics">
         <span className="title">TRENDING TOPICS:</span>
         {props.tabs.map((tab, index) => {
-
+          console.log(tab)
           return (
             <Tab
               tab={tab}
               key={index}
-              selectTabHandler={props.selectTabHandler}
+              selectTabHandler={props.selectedTabHandler}
               selectedTab={props.selectedTab}
             />
           )
@@ -26,4 +28,9 @@ const Tabs = props => {
 };
 
 // Make sure to use PropTypes to validate your types!
+Tabs.propTypes = {
+  tab: Proptypes.string,
+  selectTabHandler: Proptypes.func,
+  selectedTab: Proptypes.string
+}
 export default Tabs;
