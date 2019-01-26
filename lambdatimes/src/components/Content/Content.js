@@ -53,7 +53,7 @@ export default class Content extends Component {
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
     const newCards = this.state.cards.filter(c => {
-      // console.log(c.tab)
+
       if (this.state.selected === 'all') {
         return cardData;
       } else {
@@ -65,7 +65,7 @@ export default class Content extends Component {
   };
 
   render() {
-    console.log(this.state.selected)
+
     return (
       <div className="content-container">
         {/* 
